@@ -1,22 +1,27 @@
+body {
+
+}
 
 h1 {
+    text-align: center;
     font-family: Impact, Charcoal, sans-serif;
-    font-size: 100%
+    font-size: 700%
 }
 
 h2 {
     font-family: Impact, Charcoal, sans-serif;
-    font-size: 100%
+    font-size: 100%;
 }
 
 p {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 125%
+    font-size: 125%;
+    text-align: center;
 }
 
 a {
   font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 200%
+  font-size: 200%;
 }
 
 a:active {
@@ -25,5 +30,31 @@ a:active {
 
 table {
     font-family: "Arial Black", Gadget, sans-serif;
-    font-size: 100%
+    font-size: 100%;
+}
+
+#myBar {
+    width: 100%;
+    background-color: grey;
+}
+#myMeter {
+    width: 50%;
+    height: 30px;
+    background-color: #DAA520;
+}
+#label {
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+#dogeface {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+}
+#goButton {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
 }

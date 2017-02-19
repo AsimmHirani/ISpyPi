@@ -1,17 +1,17 @@
 function Meter() {
-    this.health = 5;
+    var health = 5;
 
     this.getHealth = function() {
-        return this.health;
+        return health;
     };
 
     this.increment = function() {
-        this.health++;
+        health++;
         this.draw();
     };
 
     this.decrement = function() {
-        this.health--;
+        health--;
         this.draw();
     };
 
@@ -20,12 +20,10 @@ function Meter() {
         var width = 1;
         var id = setInterval(frame, 3);
         function frame() {
-            if (width >= 10*this.health)
+            if (width >= 10*health)
                 clearInterval(id);
             width++;
-            elem.style.health = width;
+            elem.style.width = width;
         }
     };
-
-    this.draw();
 }

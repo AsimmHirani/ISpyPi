@@ -5,10 +5,8 @@ import random
 
 app = Flask(__name__, static_url_path='/html')
 
-
 @app.route("/")
 def get_def_file():
-    print("Want to get main")
     filename = "dogeface.html"
     return send_from_directory('html',filename)
 
@@ -33,7 +31,7 @@ def read_c():
     cmd = "/home/pi/tensorflow/tensorflow/contrib/pi_examples/camera/gen/bin/camera"
     try:
         p = check_output([cmd, ' '])
-    except CalledProcessError, e:
+    except CalledProcessError:
         p = e.output
 
     return p

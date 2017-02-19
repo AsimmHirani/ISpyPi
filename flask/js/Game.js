@@ -7,23 +7,23 @@ function Game() {
     this.screenText = new ScreenText();
 
     this.iterate = function() {
-        isGood = goodList.isMember(camera.activate());
-        if (isGood && meter.getHealth() != 9) {
-            meter.increment();
-            df.update(3);
-            screenText.betterText();
-        } else if (isGood && meter.getHealth() == 9) {
-            meter.increment();
-            df.update(4);
-            screenText.greatText();
-        } else if (!isGood && meter.getHealth() != 1) {
-            meter.decrement();
-            df.update(2);
-            screenText.badText();
-        } else if (!isGood && meter.getHealth() == 1) {
-            meter.decrement();
-            df.update(5);
-            screenText.horribleText();
+        isGood = this.goodList.isMember(this.camera.activate());
+        if (isGood && this.meter.getHealth() != 9) {
+            this.meter.increment();
+            this.df.update(3);
+            this.screenText.betterText();
+        } else if (isGood && this.meter.getHealth() == 9) {
+            this.meter.increment();
+            this.df.update(4);
+            this.screenText.greatText();
+        } else if (!isGood && this.meter.getHealth() != 1) {
+            this.meter.decrement();
+            this.df.update(2);
+            this.screenText.badText();
+        } else if (!isGood && this.meter.getHealth() == 1) {
+            this.meter.decrement();
+            this.df.update(5);
+            this.screenText.horribleText();
         }
     };
 }
