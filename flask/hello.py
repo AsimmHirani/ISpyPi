@@ -37,7 +37,7 @@ def read_c():
 
 @app.route('/list')
 def parse():
-    lines = [line.rstrip('\n') for line in open('./labels.txt')]
+    lines = [line.rstrip('\n') for line in open('./labels2.txt')]
     indices = random.sample(xrange(len(lines)), 400)
     rand_lines = [lines[i] for i in indices]
     lines_string = ""
@@ -69,4 +69,3 @@ def send_css(path):
 ##        return "404: not found"
 ##    return send_file(filename, mimetype='image/jpeg')
 ##
-

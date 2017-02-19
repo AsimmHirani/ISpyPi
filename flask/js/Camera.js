@@ -9,6 +9,7 @@ function Camera() {
 	alert("Camera Output:"+raw);
         var firstLine = raw.split('\n')[0];
         var term = raw.split('(')[0].trim();
+        term = term.split(' ');
         return term;
     };
 }
