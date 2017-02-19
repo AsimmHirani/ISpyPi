@@ -71,5 +71,5 @@ def send_css(path):
 ##    return send_file(filename, mimetype='image/jpeg')
 ##
 
-if __name__ == "__main__":
+def appRun:
     app.run()
