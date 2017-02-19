@@ -33,13 +33,12 @@ def read_c():
         p = check_output([cmd, ' '])
     except CalledProcessError, e:
         p = e.output
-
     return p
 
 @app.route('/list')
 def parse():
     lines = [line.rstrip('\n') for line in open('./labels.txt')]
-    indices = random.sample(xrange(len(lines)), 80)
+    indices = random.sample(xrange(len(lines)), 400)
     rand_lines = [lines[i] for i in indices]
     lines_string = ""
     for i in rand_lines:
@@ -71,5 +70,3 @@ def send_css(path):
 ##    return send_file(filename, mimetype='image/jpeg')
 ##
 
-def appRun:
-    app.run()
