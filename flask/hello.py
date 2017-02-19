@@ -42,7 +42,7 @@ def read_c():
 def parse():
     lines = [line.rstrip('\n') for line in open('./labels.txt')]
     indices = random.sample(range(len(lines)), 80)
-    rand_lines = [lines[i] for i in indicies]
+    rand_lines = [lines[i] for i in indices]
     lines_string = ""
     for i in rand_lines:
         lines_string += i + ', '
