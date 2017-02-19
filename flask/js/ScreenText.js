@@ -2,18 +2,18 @@ function ScreenText() {
     this.textID = 'screenText';
 
     this.betterText = function() {
-        document.getElementById(this.textID).innerHtml = 'Doge liked that. Good job';
+        document.getElementById(this.textID).innerHtml = 'Much like! So Good! Very happy!';
     };
 
     this.greatText = function() {
-        document.getElementById(this.textID).innerHtml = 'Doge is confused. Why did you do that';
+        document.getElementById(this.textID).innerHtml = 'Wow! So pro! Much skill! All love!';
     };
 
     this.badText = function() {
-        document.getElementById(this.textID).innerHtml = 'Doge is amaze. Doge has transcended';
+        document.getElementById(this.textID).innerHtml = 'Many despair! So sad! Wow!';
     };
 
     this.horribleText = function() {
-        document.getElementById(this.textID).innerHtml = 'Doge is very sad. Why u do dis?';
+        document.getElementById(this.textID).innerHtml = 'Wow! Such defeat! So loss!';
     };
 }
