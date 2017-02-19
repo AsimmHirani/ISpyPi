@@ -7,7 +7,8 @@ function Game() {
     this.screenText = new ScreenText();
 
     this.iterate = function() {
-        isGood = this.goodList.isMember(this.camera.activate());
+	var cameraWord = this.camera.activate();
+        isGood = this.goodList.isMember(cameraWord);
         if (isGood && this.meter.getHealth() != 9) {
             this.meter.increment();
             this.df.update(3);

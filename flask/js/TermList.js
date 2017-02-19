@@ -6,22 +6,23 @@ function TermList() {
     this.list = this.xhttp.responseText;
     this.list = this.list.split(', ');
 
-/*    this.isMember = function(string) {
+    this.isMember = function(string) {
         for ( var i = 0; i < this.list.length; i++) {
             if (this.list[i] === string) {
                 return true;
             }
         }
         return false;
-    }; */
-    this.isMember = function(termList) {
-        for (var i = 0; i < termList.length) {
+    };
+    /*this.isMember = function(termList) {
+	alert(termList);
+	for (var i = 0; i < termList.length; i++) {
             for (var j = 0; i < this.list.length; i++) {
-                if (this.list[j] == termList[i]) {
+                if (this.list[j] === termList[i]) {
                     return true;
                 }
             }
         }
         return false;
-    }
+    }*/
 }
