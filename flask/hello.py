@@ -30,7 +30,11 @@ def get_image():
 @app.route('/camera')
 def read_c():
     cmd = "/home/pi/tensorflow/tensorflow/contrib/pi_examples/camera/gen/bin/camera"
-    p = Popen(cmd, stdout=PIPE)
+    try {
+        p = Popen(cmd, stdout=PIPE)
+    } catch (ex) {
+        return ex.returnCode;
+    }
     string = ''
     for line in p.stdout:
         string += line + '\n'
@@ -58,7 +62,7 @@ def send_css():
 ##    else:
 ##        return "404: not found"
 ##    return send_file(filename, mimetype='image/jpeg')
-##    
- 
+##
+
 if __name__ == "__main__":
     app.run()
