@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory, request, send_file
+﻿from flask import Flask, send_from_directory, request, send_file
 from subprocess import Popen, PIPE
 ##import ourfile
 
@@ -29,10 +29,12 @@ def get_image():
 
 @app.route('/camera')
 def read_c():
-    cmd = "test.exe"
+    cmd = "/home/pi/tensorflow/tensorflow/contrib/pi_examples/camera/gen/bin/camera"
     p = Popen(cmd, stdout=PIPE)
+    string = ''
     for line in p.stdout:
-        return line
+        string += line + '\n'
+        return string
 
 @app.route('/js/<path:path>')
 def send_js(path):
