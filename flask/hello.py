@@ -1,5 +1,5 @@
 ﻿from flask import Flask, send_from_directory, request, send_file
-from subprocess import Popen, PIPE
+from subprocess import Popen, PIPE, check_output, CalledProcessError
 ##import ourfile
 
 app = Flask(__name__, static_url_path='/html')
@@ -30,15 +30,12 @@ def get_image():
 @app.route('/camera')
 def read_c():
     cmd = "/home/pi/tensorflow/tensorflow/contrib/pi_examples/camera/gen/bin/camera"
-    try {
-        p = Popen(cmd, stdout=PIPE)
-    } catch (ex) {
-        return ex.returnCode;
-    }
-    string = ''
-    for line in p.stdout:
-        string += line + '\n'
-        return string
+    try:
+        p = check_output([cmd, ' '])
+    except CalledProcessError, e:
+        p = e.output
+    
+    return p
 
 @app.route('/js/<path:path>')
 def send_js(path):
