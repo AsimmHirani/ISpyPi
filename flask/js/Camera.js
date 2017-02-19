@@ -5,6 +5,9 @@ function Camera() {
         xhttp = new XMLHttpRequest();
         xhttp.open('GET',this.path,false);
         xhttp.send();
-        return xhttp.responseText;
+        raw = xhttp.responseText;
+        firstLine = raw.split('\n')[0];
+        term = raw.split('(')[0].trim();
+        return term;
     }
 }
