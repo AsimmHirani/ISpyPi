@@ -1,11 +1,19 @@
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="stylesheet" type="text/css" href="../static/main.css">
         <title>Dogeface - What does doge want</title>
     </head>
     <body>
-        <h1>
-        This is Dogeface!!!!!!!!!
-        </h1>
+        <h1 id="PageHeader">ISpyPi - Doge Edition</h1>
+        <img id="dogeface" src="face?n=1" />
+        <p id="screenText">
+            Cheer doge up. Press the button to show doge something cool. If doge likes what he sees, he will be happy. Otherwise he will be sad.
+        </p>
+        <button onclick="gameObject.iterate()">
+        <div id="myBar">
+            <div id="myMeter">
+                <div id="label">5</div>
+            </div>
+        </div>
     </body>
 </html>

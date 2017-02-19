@@ -6,21 +6,23 @@ function Meter() {
     };
 
     this.increment = function() {
-        health++;
+        this.health++;
         this.draw();
     };
 
     this.decrement = function() {
-        health--;
+        this.health--;
         this.draw();
     };
 
     this.draw = function() {
         var elem = document.getElementById("myMeter");
         var width = 1;
-        var id = setInterval(frame, 10);
+        var id = setInterval(frame, 3);
         function frame() {
-            width = 10 * health;
+            if (width >= 10*this.health)
+                clearInterval(id);
+            width++;
             elem.style.health = width;
         }
     };
