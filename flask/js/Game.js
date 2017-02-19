@@ -25,5 +25,5 @@ function Game() {
             df.update(5);
             screenText.horribleText();
         }
-    }
+    };
 }

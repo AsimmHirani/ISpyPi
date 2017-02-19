@@ -9,5 +9,5 @@ function Camera() {
         var firstLine = raw.split('\n')[0];
         var term = raw.split('(')[0].trim();
         return term;
-    }
+    };
 }
