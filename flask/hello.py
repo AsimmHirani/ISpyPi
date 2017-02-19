@@ -1,5 +1,6 @@
 ﻿from flask import Flask, send_from_directory, request, send_file
 from subprocess import Popen, PIPE, check_output, CalledProcessError
+import random
 ##import ourfile
 
 app = Flask(__name__, static_url_path='/html')
@@ -34,8 +35,18 @@ def read_c():
         p = check_output([cmd, ' '])
     except CalledProcessError, e:
         p = e.output
-    
+
     return p
+
+@app.route('/list')
+def parse():
+    lines = [line.rstrip('\n') for line in open('./labels.txt')]
+    indices = random.sample(xrange(len(lines)), 80)
+    rand_lines = [lines[i] for i in indicies]
+    lines_string = ""
+    for i in rand_lines:
+        lines_string += i + ', '
+    return lines_string
 
 @app.route('/js/<path:path>')
 def send_js(path):
