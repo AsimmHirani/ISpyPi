@@ -1,4 +1,4 @@
-﻿from flask import Flask, send_from_directory, request, send_file, render_template
+﻿from flask import Flask, send_from_directory, request, send_file
 from subprocess import Popen, PIPE, check_output, CalledProcessError
 import random
 ##import ourfile
@@ -10,7 +10,6 @@ app = Flask(__name__, static_url_path='/html')
 def get_def_file():
     print("Want to get main")
     filename = "dogeface.html"
-    render_template('./html/dogeface.html', form=form)
     return send_from_directory('html',filename)
 
 @app.route("/faces")
