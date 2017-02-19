@@ -26,8 +26,4 @@ function Game() {
             screenText.horribleText();
         }
     }
-
-    this.newGame = function() {
-
-    }
 }
