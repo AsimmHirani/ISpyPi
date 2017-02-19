@@ -1,4 +1,5 @@
 from flask import Flask, send_from_directory, request, send_file
+from subprocess import Popen, PIPE
 ##import ourfile
 
 app = Flask(__name__)
@@ -20,10 +21,11 @@ def get_image():
     return send_file(filename, mimetype='image/jpeg')
 
 @app.route('/camera')
-def camera():
-    p = subprocess.Popen(cmd, stdout=PIPE)
+def read_c():
+    cmd = "test.exe"
+    p = Popen(cmd, stdout=PIPE)
     for line in p.stdout:
-        print("Python" + line)
+        return line
 
 @app.route('/js/<path:path>')
 def send_js(path):
