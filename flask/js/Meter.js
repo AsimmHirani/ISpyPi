@@ -8,11 +8,13 @@ function Meter() {
     this.increment = function() {
         health++;
         this.draw();
+        document.getElementById('label').innerHtml = health;
     };
 
     this.decrement = function() {
         health--;
         this.draw();
+        document.getElementById('label').innerHtml = health;
     };
 
     this.draw = function() {
@@ -23,7 +25,7 @@ function Meter() {
             if (width >= 10*health)
                 clearInterval(id);
             width++;
-            elem.style.width = width;
+            elem.style.width = width+'%';
         }
     };
 }

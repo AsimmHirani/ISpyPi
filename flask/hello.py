@@ -31,7 +31,7 @@ def read_c():
     cmd = "/home/pi/tensorflow/tensorflow/contrib/pi_examples/camera/gen/bin/camera"
     try:
         p = check_output([cmd, ' '])
-    except CalledProcessError:
+    except CalledProcessError, e:
         p = e.output
 
     return p
@@ -39,7 +39,7 @@ def read_c():
 @app.route('/list')
 def parse():
     lines = [line.rstrip('\n') for line in open('./labels.txt')]
-    indices = random.sample(range(len(lines)), 80)
+    indices = random.sample(xrange(len(lines)), 80)
     rand_lines = [lines[i] for i in indices]
     lines_string = ""
     for i in rand_lines:
