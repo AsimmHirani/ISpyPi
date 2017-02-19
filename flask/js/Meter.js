@@ -21,7 +21,7 @@ function Meter() {
         var id = setInterval(frame, 10);
         function frame() {
             width = 10 * health;
-            elem.style.health = health;
+            elem.style.health = width;
         }
     };
 
