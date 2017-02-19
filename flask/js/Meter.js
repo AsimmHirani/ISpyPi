@@ -8,13 +8,13 @@ function Meter() {
     this.increment = function() {
         health++;
         this.draw();
-        document.getElementById('label').innerHtml = health;
+        document.getElementById('label').innerHTML = health;
     };
 
     this.decrement = function() {
         health--;
         this.draw();
-        document.getElementById('label').innerHtml = health;
+        document.getElementById('label').innerHTML = health;
     };
 
     this.draw = function() {
