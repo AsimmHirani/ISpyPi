@@ -46,6 +46,7 @@ def parse():
     lines_string = ""
     for i in rand_lines:
         lines_string += i + ', '
+    lines_string = lines_string[:-2]
     return lines_string
 
 @app.route('/js/<path:path>')
