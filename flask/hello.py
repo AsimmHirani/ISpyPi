@@ -2,9 +2,16 @@ from flask import Flask, send_from_directory, request, send_file
 from subprocess import Popen, PIPE
 ##import ourfile
 
-app = Flask(__name__)
- 
+app = Flask(__name__, static_url_path='/html')
+
+
 @app.route("/")
+def get_def_file():
+    print("Want to get main")
+    filename = "dogeface.html"
+    return send_from_directory('html',filename);
+
+@app.route("/faces")
 def get_image():
     if request.args.get('n') == '1':
         filename = "neutral_face.jpeg"
@@ -18,7 +25,7 @@ def get_image():
        filename = 'gameover_bad.jpeg'
     else:
         return "404: not found"
-    return send_file(filename, mimetype='image/jpeg')
+    return send_from_directory('img', filename)
 
 @app.route('/camera')
 def read_c():
@@ -31,6 +38,9 @@ def read_c():
 def send_js(path):
     return send_from_directory('js', path)
 
+@app.route('/css/<path:path>')
+def send_css():
+    return send_from_directory('static',path);
 ##@app.route('/get_image')
 ##def get_image():
 ##    if request.args.get('n') == '1':
