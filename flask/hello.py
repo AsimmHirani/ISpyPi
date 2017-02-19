@@ -41,7 +41,7 @@ def read_c():
 @app.route('/list')
 def parse():
     lines = [line.rstrip('\n') for line in open('./labels.txt')]
-    indices = random.sample(xrange(len(lines)), 80)
+    indices = random.sample(range(len(lines)), 80)
     rand_lines = [lines[i] for i in indicies]
     lines_string = ""
     for i in rand_lines:
